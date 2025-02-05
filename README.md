@@ -71,5 +71,5 @@ The **Product Recommendations System** is a web application that provides users 
 
 1. **Clone the repository**
    ```sh
-   git clone https://github.com/your-username/product-recommendations.git
+   git clone https://github.com/hirock0/Product-Recommendations-System.git
    cd product-recommendations
