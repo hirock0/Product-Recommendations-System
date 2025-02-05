@@ -54,6 +54,13 @@ The **Product Recommendations System** is a web application that provides users 
 - Swiper - Image sliders
 - Typewriter Effect - Typing animations
 
+---
+ ## Install server dependencies
+- npm install
+
+## To run project
+- npm run dev
+---
 ## ⚙️ Configuration
 ### Create a .env file in the server directory and configure the necessary environment variables:
 
