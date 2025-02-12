@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 const Section_3 = () => {
   return (
     <section className=" overflow-hidden ">
-      <div className=" bg-slate-100 py-10   ">
+      <div className=" bg-slate-100   ">
         <div className="container py-10 mx-auto px-5 flex gap-10 justify-between items-center max-md:flex-col">
           <div className=" relative ">
             <img src="https://i.ibb.co.com/k2JcjWy/man-1.png" alt="man" />
@@ -70,7 +70,7 @@ const Section_3 = () => {
                 </Link>
               </div>
             </div>
-            <div className=" w-1/2 max-lg:w-full grid grid-cols-2 max-md:grid-cols-1 justify-items-center text-white">
+            <div className=" w-1/2 max-lg:w-full grid grid-cols-2 max-md:grid-cols-1 justify-items-center text-white py-10">
               <div data-aos="fade-down" className=" h-72 max-md:w-full">
                 <img
                   src="https://i.ibb.co.com/BVmJpDx/lady-4.png"
