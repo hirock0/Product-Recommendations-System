@@ -1,7 +1,7 @@
 import Typewriter from "typewriter-effect";
 const Section_2 = () => {
   return (
-    <section className=" py-10 bg-slate-700 text-white">
+    <section className=" py-10 mt-10 bg-slate-700 text-white">
       <div className="">
         <div className=" flex max-lg:flex-col-reverse container mx-auto px-5 ">
           <div className=" w-full max-lg:mt-5 max-lg:flex max-lg:justify-center ">

@@ -15,10 +15,10 @@ const Section_1 = () => {
   const allQueries = reqQueries?.data?.getQueries;
   const sliceQueries = allQueries?.slice(0, 6);
   return (
-    <section>
+    <section className="">
       <div className="">
         <div className="bg-blue-400">
-          <div className=" container text-white mx-auto px-5 flex items-center justify-between py-5 ">
+          <div className=" container  text-white mx-auto px-5 flex items-center justify-between py-5 ">
             <h1 className="font-semibold text-lg max-sm:text-base">Recent Queries</h1>
             <button
               onClick={() => navigate("/queries")}

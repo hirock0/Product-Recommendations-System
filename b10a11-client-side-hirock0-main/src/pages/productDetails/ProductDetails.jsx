@@ -28,14 +28,9 @@ const ProductDetails = () => {
       date: new Date().toLocaleDateString(),
     };
     setRecommendations([...recommendations, recommendationData]);
-    setNewRecommendation(""); // Clear input
+    setNewRecommendation("");
 
-    // Optional: Send to backend (MongoDB, Firebase)
-    // await fetch("/api/recommendations", {
-    //   method: "POST",
-    //   body: JSON.stringify(recommendationData),
-    //   headers: { "Content-Type": "application/json" },
-    // });
+    console.log(recommendationData);
   };
 
   return (
