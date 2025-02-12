@@ -117,7 +117,7 @@ const ProductDetails = () => {
               </div>
 
               {/* Display Recommendations */}
-              <div className="bg-gray-50 p-4 rounded-lg shadow-md">
+              <div className="bg-gray-50 p-4 rounded-lg shadow-md h-72 overflow-y-scroll">
                 <h3 className="text-lg font-semibold mb-2">
                   User Recommendations ({recommendations.length})
                 </h3>
