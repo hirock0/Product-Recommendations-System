@@ -8,7 +8,6 @@ import { productQueriesRoute } from "./routes/productQueries.route.js";
 const app = express();
 const corsOptions = {
   origin: process.env.CLIENT_SIDE_URL,
-
   credentials: true,
 };
 app.use(cookieParser(process.env.TOKEN_SECRET));
