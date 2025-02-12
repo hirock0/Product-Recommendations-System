@@ -11,7 +11,7 @@ const Section_2 = () => {
               className=" object-cover"
             />
           </div>
-          <div className="  w-full px-5">
+          <div className="  w-full px-5 ">
             <div className=" flex max-md:flex-col max-md:items-center">
               <img
                 src="  https://i.ibb.co.com/z2Fzy0k/metting-2.jpg"
