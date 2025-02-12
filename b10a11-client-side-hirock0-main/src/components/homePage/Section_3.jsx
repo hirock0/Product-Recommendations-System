@@ -41,7 +41,7 @@ const Section_3 = () => {
           </div>
         </div>
         {/* ------- */}
-        <div className=" bg-blue-600 py-10">
+        <div className=" bg-blue-600 py-10 ">
           <div className=" container mx-auto px-5 flex max-lg:flex-col gap-5">
             <div className=" text-white space-y-20 w-1/2 max-lg:w-full">
               <h1 className="text-3xl font-semibold">Suggest A Queries</h1>

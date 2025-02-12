@@ -24,7 +24,7 @@ const RecommentBtn = ({ id, recommend, count }) => {
   };
   return (
     <button
-      className="btn flex items-center gap-2"
+      className="btn bg-accent flex items-center gap-2"
       onClick={() => handleRecommend()}
       data-aos="fade-right"
     >
