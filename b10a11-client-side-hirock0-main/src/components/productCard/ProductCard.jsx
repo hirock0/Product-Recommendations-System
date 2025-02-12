@@ -12,7 +12,7 @@ const ProductCard = ({ product }) => {
   return (
     <Slide triggerOnce>
       <div className="card  w-full overflow-hidden max-w-sm bg-base-100 shadow-lg hover:shadow-xl hover:shadow-black rounded-lg transition-shadow duration-300">
-        <div>
+        <div className=" ">
           <img
             src={productImage}
             alt={productName}
@@ -20,7 +20,7 @@ const ProductCard = ({ product }) => {
             data-aos="zoom-in"
           />
         </div>
-        <div className="card-body p-4 bg-zinc-100">
+        <div className="card-body p-4 py-5 bg-zinc-100">
           <h2 className="card-title text-xl font-bold">{productName}</h2>
           <p className="text-sm">Brand: {productBrand}</p>
           <p className="text-sm truncate">Query: {queryTitle}</p>
