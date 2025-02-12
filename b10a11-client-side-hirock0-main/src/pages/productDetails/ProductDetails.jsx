@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useState } from "react";
 import {
   FaEnvelope,
   FaUser,
@@ -6,16 +6,42 @@ import {
   FaClock,
   FaStar,
 } from "react-icons/fa";
-import { FiImage } from "react-icons/fi";
 import { useLoaderData } from "react-router-dom";
+
 const ProductDetails = () => {
   const product = useLoaderData();
   const data = product?.data?.findProduct;
 
+  // State for recommendations
+  const [recommendations, setRecommendations] = useState([]);
+  const [newRecommendation, setNewRecommendation] = useState("");
+
+  // Handle recommendation submission
+  const handleRecommendSubmit = (e) => {
+    e.preventDefault();
+    if (!newRecommendation.trim()) return;
+
+    // Add recommendation to the list
+    const recommendationData = {
+      id: Date.now(),
+      message: newRecommendation,
+      date: new Date().toLocaleDateString(),
+    };
+    setRecommendations([...recommendations, recommendationData]);
+    setNewRecommendation(""); // Clear input
+
+    // Optional: Send to backend (MongoDB, Firebase)
+    // await fetch("/api/recommendations", {
+    //   method: "POST",
+    //   body: JSON.stringify(recommendationData),
+    //   headers: { "Content-Type": "application/json" },
+    // });
+  };
+
   return (
-    <main className=" bg-[url(https://i.ibb.co.com/hWWdLg3/bg.jpg)] bg-center bg-cover bg-no-repeat ">
-      <div className="min-h-screen bg-slate-800/80 flex items-center justify-center h-full w-full">
-        <div className=" container mx-auto p-5 ">
+    <main className="bg-[url(https://i.ibb.co.com/hWWdLg3/bg.jpg)] bg-center bg-cover bg-no-repeat">
+      <div className="min-h-screen bg-slate-800/80 flex items-center justify-center w-full">
+        <div className="container mx-auto p-5">
           <div
             className="max-w-4xl mx-auto bg-white shadow-lg rounded-lg overflow-hidden"
             data-aos="fade-up"
@@ -68,9 +94,55 @@ const ProductDetails = () => {
                   <p className="text-gray-700">{data.reasonDetails}</p>
                   <div className="flex items-center">
                     <FaStar className="text-yellow-500 mr-2" />
-                    <span>{data.recommendationCount} Recommendations</span>
+                    <span>{recommendations.length} Recommendations</span>
                   </div>
                 </div>
+              </div>
+
+              {/* Recommendation Form */}
+              <div className="bg-gray-100 p-4 rounded-lg shadow-md">
+                <h3 className="text-lg font-semibold mb-2">
+                  Leave a Recommendation
+                </h3>
+                <form onSubmit={handleRecommendSubmit} className="space-y-2">
+                  <textarea
+                    className="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    rows="3"
+                    placeholder="Write your recommendation..."
+                    value={newRecommendation}
+                    onChange={(e) => setNewRecommendation(e.target.value)}
+                  ></textarea>
+                  <button
+                    type="submit"
+                    className="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 transition"
+                  >
+                    Submit
+                  </button>
+                </form>
+              </div>
+
+              {/* Display Recommendations */}
+              <div className="bg-gray-50 p-4 rounded-lg shadow-md">
+                <h3 className="text-lg font-semibold mb-2">
+                  User Recommendations ({recommendations.length})
+                </h3>
+                {recommendations.length === 0 ? (
+                  <p className="text-gray-500">No recommendations yet.</p>
+                ) : (
+                  <ul className="space-y-2">
+                    {recommendations.map((rec) => (
+                      <li
+                        key={rec.id}
+                        className="border-b border-gray-300 pb-2"
+                      >
+                        <p className="text-gray-700">"{rec.message}"</p>
+                        <p className="text-xs text-gray-500">
+                          - Posted on {rec.date}
+                        </p>
+                      </li>
+                    ))}
+                  </ul>
+                )}
               </div>
 
               {/* Query Details */}
